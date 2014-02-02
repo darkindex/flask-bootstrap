@@ -8,7 +8,7 @@ def build():
     """Build or update the virtualenv."""
     with settings(hide('stdout')):
         print(cyan('\nUpdating venv, installing packages...'))
-        do('[ -e venv ] || virtualenv venv --no-site-packages')
+        do('[ -e venv ] || virtualenv venv')
         # annoyingly, pip prints errors to stdout (instead of stderr), so we
         # have to check the return code and output only if there's an error.
         with settings(warn_only=True):
